@@ -1,0 +1,25 @@
+module_init(nv_mem_client_init);
+    reg_handle = ib_register_peer_memory_client(&nv_mem_client, &mem_invalidate_callback)
+static struct peer_memory_client nv_mem_client = {
+	.acquire		= nv_mem_acquire,
+	.get_pages	= nv_mem_get_pages,
+	.dma_map	= nv_dma_map,
+	.dma_unmap	= nv_dma_unmap,
+	.put_pages	= nv_mem_put_pages,
+	.get_page_size	= nv_mem_get_page_size,
+	.release		= nv_mem_release,
+};
+
+nv_mem_get_pages
+    nvidia_p2p_get_pages(0, 0, nv_mem_context->page_virt_start, nv_mem_context->mapped_size, &nv_mem_context->page_table, nv_get_p2p_free_callback, nv_mem_context)
+
+.dma_map	= nv_dma_map,
+    nvidia_p2p_dma_map_pages(pdev, page_table, &dma_mapping)
+    sg_alloc_table(sg_head, dma_mapping->entries, GFP_KERNEL)
+    for_each_sg(sg_head->sgl, sg, nv_mem_context->npages, i) {
+        sg_set_page(sg, NULL, nv_mem_context->page_size, 0);
+        sg->dma_address = dma_mapping->dma_addresses[i];
+        sg->dma_length = nv_mem_context->page_size;
+	}
+    sg_alloc_table
+    

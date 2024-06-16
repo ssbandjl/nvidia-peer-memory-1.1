@@ -1,0 +1,75 @@
+nvidia-peer-memory (1.1-0) unstable; urgency=low
+
+  *  Makefile: Support compiling without MLNX_OFED
+  *  Makefile: Imporve parsing /proc/version
+  *  Add EXPORT_SYMBOL to symver
+
+ -- Feras Daoud <ferasda@nvidia.com>  Mon, 27 Jul 2020 16:01:20 +0200
+
+nvidia-peer-memory (1.0-9) unstable; urgency=low
+
+  *  create_nv.symvers.sh: avoid non-crc syms on old
+  *  build_module.sh: Reorder parameters of tar
+  *  deb: simpler dkms script and more
+  *  create_syms_fix.sh: also look for nvidia_p2p_* symbols
+
+ -- Feras Daoud <ferasda@mellanox.com>  Tue, 05 May 2020 19:43:30 +0200
+
+nvidia-peer-memory (1.0-8) unstable; urgency=low
+
+  *  create_nv.symvers.sh: Support compressed modules
+
+ -- Alaa Hleihel <alaa@mellanox.com>  Thu, 06 Sep 2018 15:45:30 +0200
+
+nvidia-peer-memory (1.0-7) unstable; urgency=low
+
+  *  Replace ACCESS_ONCE() by READ_ONCE() and WRITE_ONCE()
+  *  Revert "debian: Add dependency on cuda"
+
+ -- Alaa Hleihel <alaa@mellanox.com>  Thu, 03 May 2018 15:45:30 +0200
+
+nvidia-peer-memory (1.0-6) unstable; urgency=low
+
+  *  debian: Add dependency on cuda
+  *  debian: Add dependency on mlnx-ofed-kernel
+  *  create_nv.symvers.sh: W/A for PPC kernels with relative CRCs
+  *  Makefile: Try to get nv-p2p.h based on available nvidia module version
+  *  Makefile: Fix getting ofa_kernel path
+
+ -- Alaa Hleihel <alaa@mellanox.com>  Wed, 10 Jan 2018 15:45:30 +0200
+
+nvidia-peer-memory (1.0-5) unstable; urgency=low
+
+  *  Support kernels with CONFIG_MODVERSIONS unset
+
+ -- Feras Daoud <ferasda@mellanox.com>  Sun, 20 Aug 2017 15:45:30 +0200
+
+nvidia-peer-memory (1.0-4) unstable; urgency=low
+
+  *  Stable NV_DMA_MAPPING
+
+ -- Feras Daoud <ferasda@mellanox.com>  Wed, 15 May 2017 11:20:20 +0200
+
+nvidia-peer-memory (1.0-3) unstable; urgency=low
+
+  *  Bar address re-mapping for POWER
+
+ -- Feras Daoud <ferasda@mellanox.com>  Wed, 04 Jan 2017 13:00:23 +0200
+
+nvidia-peer-memory (1.0-2) unstable; urgency=low
+
+  * Build infrastructure improvements
+
+ -- Yishai Hadas <yishaih@mellanox.com>  Thu, 03 Nov 2016 15:00:53 +0200
+
+vidia-peer-memory (1.0-1) unstable; urgency=low
+
+  * Makefile: EXTRA_CFLAGS was deprecated [1] in newer kernels.
+
+ -- Yishai Hadas <yishaih@mellanox.com>  Wed, 17 Aug 2016 15:00:53 +0200
+
+nvidia-peer-memory (1.0-0) unstable; urgency=low
+
+  * Initial release. Closes: #358673
+
+ -- Alaa Hleihel <alaa@mellanox.com>  Thur, 12 Dec 2013 15:00:53 +0200
